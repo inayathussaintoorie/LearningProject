@@ -2,41 +2,57 @@
 <html>
 	<head>
 	<style>
-		.wrapper {
-			border: 1px solid black;
-			resize: vertical;
-			overflow: auto;
+		* {
+			box-sizing: border-box;
 		}
+		.container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.container > div {
+			padding: 20px;
+			background-color: tomato;
+			flex-basis: 100%;
+			margin: 2px;
+		}
+
+		@media screen and (min-width: 480px) {
+			.container > div {
+				flex-basis: 49%;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			.container > div {
+				flex-basis: 32%;
+			}
+		}
+
+		@media screen and (min-width: 992px) {
+			.container > div {
+				flex-basis: 24%;
+			}
+		}
+
 	</style>
 	</head>
 	<body>
-		<section class="wrapper">
-			<div class="firstColumn">
-				<p>
-					
-Calculate the difference between two times
-Excel for Microsoft 365 Excel 2021 Excel 2019 Excel 2016 More...
-
-Let's say that you want find out how long it takes for an employee to complete an assembly line operation or a fast food order to be processed at peak hours. There are several ways to calculate the difference between two times.
-Present the result in the standard time format
-
-There are two approaches that you can take to present the results in the standard time format (hours : minutes : seconds). You use the subtraction operator (-) to find the difference between times, and then do either of the following:
-
-Apply a custom format code to the cell by doing the following:
-
-    Select the cell.
-
-    On the Home tab, in the Number group, click the arrow next to the General box, and then click More Number Formats.
-
-    In the Format Cells dialog box, click Custom in the Category list, and then select a custom format in the Type box.
-
-Use the TEXT function to format the times: When you use the time format codes, hours never exceed 24, minutes never exceed 60, and seconds never exceed 60.
-Example Table 1 — Present the result in the standard time format
-
-Copy the following table to a blank worksheet, and then modify if necessary.
-				</p>
+		<div class="container">
+			<div style="order: 4;">
+				1
 			</div>
-		</section>
+			<div style="order: 3;">
+				2
+			</div>
+			<div style="order: 2;">
+				3
+			</div>
+			<div style="order: 1;">
+				4
+			</div>
+		</div>
 		<script src="./script.js"></script>
 	</body>
 </html>
