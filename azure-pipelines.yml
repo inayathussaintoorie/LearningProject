@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: 'Windows_NT'
-  name: 'INAYATH'
+  name: 'Default'
 
 steps:
 - script: echo Hello, world!
