@@ -17,6 +17,13 @@ stages:
     jobs:
       - job: Job_A1
         displayName: Job A1
+        strategy:
+          maxParallel: 0
+          matrix:
+            jobOne:
+              myVar1: "Instance 1"
+            jobTwo:
+              myVar1: "Instance 2"
         steps:
           - script: echo name of directory $(Agent.BuildDirectory)
       - job: Job_A2
