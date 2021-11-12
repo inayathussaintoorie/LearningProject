@@ -59,8 +59,8 @@ stages:
         steps:
           - task: InlinePowershell@1
             inputs:
-              script: |
-              Write-Output 'going to sleep'
-              Start-Sleep -s 180
-              Write-Output 'Waking up'
+              script:
+                Write-Output 'going to sleep'
+                Start-Sleep -s 180
+                Write-Output 'Waking up'
 
