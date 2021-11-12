@@ -18,7 +18,7 @@ stages:
       - job: Job_A1
         displayName: Job A1
         steps:
-          - script: echo 'Job A1 printed'
+          - script: echo name of directory $(Agent.BuildDirectory)
       - job: Job_A2
         displayName: Job A2
         steps:
