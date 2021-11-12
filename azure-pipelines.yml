@@ -4,33 +4,53 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+  - main
 
 pool:
   vmImage: 'Windows_NT'
   name: 'Default'
 
 stages:
-- stage: A
-  dependsOn: []
-  displayName: "Thi is stage A"
-  variables:
-    mySecret: "shahshsssssh"
-  jobs:
-  - job: A1
-    steps:
-    - script: echo "this is job A1"
-  - job: A2
-    steps:
-    - script: echo "this is job A2"
-    - script: echo $(mySecret)
-    
-- stage: B
-  dependsOn: A
-  jobs:
-  - job: B1
-    steps:
-    - script: echo "this is job B1"
-  - job: B2
-    steps:
-      - script: echo "this is job B2"
+  - stage: A
+    displayName: Stage A
+    dependsOn: []
+    jobs:
+      - job: Job_A1
+        displayName: Job A1
+        steps:
+          - script: echo 'Job A1 printed'
+      - job: Job_A2
+        displayName: Job A2
+        steps:
+          - script: echo 'Job A2 printed'
+
+  - stage: B
+    displayName: Stage B
+    dependsOn: A
+    condition: (succeeded())
+    jobs:
+      - job: Job_B1
+        displayName: Job B1
+        steps:
+          - script: echo 'Job B1 printed'
+      - job: Job_B2
+        displayName: Job B2
+        steps:
+          - script: echo "job B2 printed"
+
+  - stage: C
+    dependsOn:
+    - A
+    - B
+    condition: (succeeded())
+    displayName: Stage C
+    jobs:
+      - job: Job_C1
+        displayName: Job C1
+        steps:
+          - script: echo 'Job C1 printed'
+      - job: Job_C2
+        displayName: Job C2
+        steps:
+          - script: echo 'Job C2 printed'
+
