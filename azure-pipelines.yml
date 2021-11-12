@@ -11,9 +11,11 @@ pool:
   name: 'Default'
 
 stages:
-  - stage: A
-    displayName: Stage A 
-    dependsOn:[]
-    jobs:
-    - job: JobA
-    - script: echo "hello world"
+- stage: A
+  jobs:
+  - job: JobA
+    steps:
+    - script: echo "this is job 1"
+  - job: JobB
+    steps:
+    - script: echo "this is job 2"
