@@ -61,6 +61,6 @@ stages:
             inputs:
               script: |
               Write-Output 'going to sleep'
-              Strat-Sleep -s 180
+              Start-Sleep -s 180
               Write-Output 'Waking up'
 
