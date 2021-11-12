@@ -53,4 +53,14 @@ stages:
         displayName: Job C2
         steps:
           - script: echo 'Job C2 printed'
+      - job: testCancellation
+        timeoutInMinutes: 1
+        displayName: cancellation test
+        steps:
+          - task: InlinePowershell@1
+            inputs:
+              script: |
+              Write-Output 'going to sleep'
+              Strat-Sleep -s 180
+              Write-Output 'Waking up'
 
