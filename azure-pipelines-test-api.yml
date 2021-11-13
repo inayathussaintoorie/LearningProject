@@ -54,3 +54,15 @@ stages:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'TestAPIArtifact'
 
+- stage: Deploy
+  jobs:
+    - deployment: Deploy
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - task: IISWebAppDeploymentOnMachineGroup@0
+                inputs:
+                  WebSiteName: 'MyTestAPI'
+                  Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+         
