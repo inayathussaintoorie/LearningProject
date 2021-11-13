@@ -21,7 +21,7 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-- stage: Build test API
+- stage: Build_test_API
   jobs:
     - job: Build_API
       displayName: "Build the code of API"
