@@ -55,8 +55,11 @@ stages:
           ArtifactName: 'TestAPIArtifact'
 
 - stage: Deploy
+  variables:
+    environment: MyTestingEnvironment
   jobs:
     - deployment: Deploy
+      environment: $(environment)
       strategy:
         runOnce:
           deploy:
