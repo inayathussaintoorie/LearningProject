@@ -9,7 +9,7 @@ trigger:
      - main
  paths:
    include:
-     - MyTestAPI/**/*.csproj
+     - MyTestAPI/*
      - azure-pipelines-test-api.yml
     
 pool:
@@ -17,7 +17,7 @@ pool:
   name: 'Inayat Custom Agents Pool'
 
 variables:
-  solution: MyTestAPI/**/*.sln'
+  solution: MyTestAPI/**/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
