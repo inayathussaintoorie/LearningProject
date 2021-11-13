@@ -9,14 +9,14 @@ trigger:
      - main
  paths:
    include:
-     - LearningProject/MyTestAPI/**/*.csproj
+     - MyTestAPI/**/*.csproj
     
 pool:
   vmImage: 'windows-NT'
   name: 'Inayat Custom Agents Pool'
 
 variables:
-  solution: LearningProject/MyTestAPI/**/*.sln'
+  solution: MyTestAPI/**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
