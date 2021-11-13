@@ -10,6 +10,7 @@ trigger:
  paths:
    include:
      - MyTestAPI/**/*.csproj
+     - azure-pipelines-test-api.yml
     
 pool:
   vmImage: 'windows-NT'
