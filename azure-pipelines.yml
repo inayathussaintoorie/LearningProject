@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: 'Windows_NT'
-  name: 'Default'
+  name: 'Inayat Custom Agents Pool'
 
 stages:
   - stage: A
