@@ -17,7 +17,7 @@ pool:
   name: 'Inayat Custom Agents Pool'
 
 variables:
-  solution: MyTestAPI/**/*.csproj'
+  solution: MyTestAPI/**/*.csproj
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
