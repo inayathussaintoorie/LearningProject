@@ -40,6 +40,9 @@ stages:
           platform: '$(buildPlatform)'
           configuration: '$(buildConfiguration)'
 
+      - script:
+         echo this is the staging directory $(Build.ArtifactStagingDirectory)
+        
       - task: VSTest@2
         inputs:
           platform: '$(buildPlatform)'
