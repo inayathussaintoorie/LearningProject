@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: 'Windows_NT'
+  name: 'Default'
 
 stages:
   - stage: A
