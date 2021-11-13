@@ -8,7 +8,6 @@ trigger:
 
 pool:
   vmImage: 'Windows_NT'
-  name: 'Default'
 
 stages:
   - stage: A
@@ -70,4 +69,13 @@ stages:
                 Write-Output 'going to sleep'
                 Start-Sleep -s 180
                 Write-Output 'Waking up'
+
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |
+                # Write your PowerShell commands here.
+                Write-Host "sleeping"
+                Start-Sleep -s 180
+                Write-Host "sleep Ended"
 
