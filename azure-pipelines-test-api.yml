@@ -101,4 +101,4 @@ stages:
               - task: IISWebAppDeploymentOnMachineGroup@0
                 inputs:
                   WebSiteName: 'MyTestAPI'
-                  Package: '$(System.ArtifactsDirectory)\**\*.zip'
+                  Package: '$(System.ArtifactsDirectory)\**\MyTestAPI'
