@@ -87,19 +87,6 @@ stages:
                   downloadPath: '$(System.ArtifactsDirectory)'
 
               - task: IISWebAppManagementOnMachineGroup@0
-                displayName: Create App pool and Website
-                inputs:
-                  WebsiteName: 'MyTestAPI'
-                  WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
-                  CreateOrUpdateAppPoolForWebsite: true
-                  AppPoolNameForWebsite: 'DotNetCorePool'
-                  AnonymousAuthenticationForWebsite: true
-                  AppPoolIdentity: LocalSystem
-                  ApplicationPhysicalPathAuth: ApplicationWindowsAuth
-                  AppPoolIdentityForApplication: LocalSystem
-                  BasicAuthenticationForWebsite: false
-
-              - task: IISWebAppManagementOnMachineGroup@0
                 displayName: Create app pool and website try 2
                 inputs:
                   IISDeploymentType: 'IISWebsite'
