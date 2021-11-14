@@ -65,11 +65,11 @@ stages:
         displayName: Publishing the API code
         inputs:
           command: 'publish'
-          publishWebProjects: false
+          publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.csproj'
           arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
-          zipAfterPublish: true
+          zipAfterPublish: false
           modifyOutputPath: true
           
       - task: PublishBuildArtifacts@1
