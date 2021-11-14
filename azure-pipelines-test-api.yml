@@ -29,18 +29,64 @@ stages:
       steps:
       - task: NuGetToolInstaller@1
 
-      - task: NuGetCommand@2
+      - task: DotNetCoreCLI@2
         inputs:
-          restoreSolution: '$(solution)'
+          command: 'restore'
+          projects: '$(solution)'
 
       - task: VSBuild@1
         inputs:
           solution: '$(solution)'
-          msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
           platform: '$(buildPlatform)'
           configuration: '$(buildConfiguration)'
 
+      - script:
+         echo this is the staging directory $(Build.ArtifactStagingDirectory)
+        
       - task: VSTest@2
         inputs:
           platform: '$(buildPlatform)'
           configuration: '$(buildConfiguration)'
+          
+      - task: UseDotNet@2
+        inputs:
+          version: 5.0.x
+          packageType: runtime
+
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: 'publish'
+          publishWebProjects: true
+          configuration: $(buildConfiguration)
+          projects: $(solution)
+          arguments: --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
+          zipAfterPublish: true
+          modifyOutputPath: true
+
+          
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+          ArtifactName: 'TestAPIArtifact'
+
+- stage: Deploy
+  variables:
+    environment: MyTestingEnvironment
+  jobs:
+    - deployment: Deploy
+      environment: $(environment)
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - task: DownloadBuildArtifacts@1
+                inputs:
+                  buildType: 'current'
+                  downloadType: 'single'
+                  artifactName: 'TestAPIArtifact'
+                  downloadPath: '$(System.ArtifactsDirectory)'
+
+              - task: IISWebAppDeploymentOnMachineGroup@0
+                inputs:
+                  WebSiteName: 'MyTestAPI'
+                  Package: '$(System.ArtifactsDirectory)\**\*.zip'
