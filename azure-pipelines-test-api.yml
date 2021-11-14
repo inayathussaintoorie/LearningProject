@@ -60,14 +60,14 @@ stages:
           Contents: $(Build.ArtifactStagingDirectory) $(Build.ArtifactStagingDirectory)
           
       - script: 
-         echo the ArtifactStagingDirectory is 
+         echo the ArtifactStagingDirectory is $(Build.ArtifactStagingDirectory)
       - task: DotNetCoreCLI@2
         displayName: Publishing the API code
         inputs:
           command: 'publish'
           publishWebProjects: false
           configuration: $(buildConfiguration)
-          projects: 'MyTestAPI/MyTestAPI/*.zip'
+          projects: 'MyTestAPI/MyTestAPI/*.csproj'
           arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
           zipAfterPublish: true
           modifyOutputPath: true
