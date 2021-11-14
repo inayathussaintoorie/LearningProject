@@ -29,9 +29,10 @@ stages:
       steps:
       - task: NuGetToolInstaller@1
 
-      - task: NuGetCommand@2
+      - task: DotNetCoreCLI@2
         inputs:
-          restoreSolution: '$(solution)'
+          command: 'restore'
+          projects: '$(solution)'
 
       - task: VSBuild@1
         inputs:
@@ -55,6 +56,7 @@ stages:
           projects: $(solution)
           arguments: -output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
           zipAfterPublish: true
+          modifyOutputPath: true
           
       - task: PublishBuildArtifacts@1
         inputs:
@@ -71,8 +73,22 @@ stages:
         runOnce:
           deploy:
             steps:
+              - task: DownloadBuildArtifacts@1
+                inputs:
+                  buildType: 'current'
+                  downloadType: 'single'
+                  artifactName: 'TestAPIArtifact'
+                  downloadPath: '$(System.ArtifactsDirectory)'
+
+              - task: IISWebAppManagementOnMachineGroup@0
+                displayName: Create App pool and Website
+                inputs:
+                  WebsiteName: 'MyTestAPI'
+                  WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
+                  CreateOrUpdateAppPoolForWebsite: true
+                  AppPoolNameForWebsite: 'DotNetCorePool'
+                  
               - task: IISWebAppDeploymentOnMachineGroup@0
                 inputs:
                   WebSiteName: 'MyTestAPI'
-                  Package: '$(Agent.BuildDirectory)\**\*.zip'
-         
+                  Package: '$(System.ArtifactsDirectory)\**\*.zip'
