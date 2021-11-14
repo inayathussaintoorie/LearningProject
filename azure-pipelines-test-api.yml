@@ -65,14 +65,14 @@ stages:
           publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.zip'
-          arguments: --output $(Build.ArtifactStagingDirectory)
+          arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
           zipAfterPublish: true
           modifyOutputPath: true
 
           
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/Output'
           ArtifactName: 'TestAPIArtifact'
 
 - stage: Deploy
@@ -92,10 +92,9 @@ stages:
                   artifactName: 'TestAPIArtifact'
                   downloadPath: '$(System.ArtifactsDirectory)'
                   
-              - task: PowerShell@2
-                inputs:
-                  script: 
-                   echo Path of System.ArtifactsDirectory is $(System.ArtifactsDirectory)
+              
+              - script: 
+                 echo Path of System.ArtifactsDirectory is $(System.ArtifactsDirectory)
                   
               - task: IISWebAppDeploymentOnMachineGroup@0
                 inputs:
