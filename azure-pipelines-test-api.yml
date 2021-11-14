@@ -65,7 +65,7 @@ stages:
         displayName: Publishing the API code
         inputs:
           command: 'publish'
-          publishWebProjects: true
+          publishWebProjects: false
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.csproj'
           arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
