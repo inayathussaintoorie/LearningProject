@@ -86,20 +86,6 @@ stages:
                   artifactName: 'TestAPIArtifact'
                   downloadPath: '$(System.ArtifactsDirectory)'
 
-              - task: IISWebAppManagementOnMachineGroup@0
-                displayName: Create app pool and website try 2
-                inputs:
-                  IISDeploymentType: 'IISWebsite'
-                  ActionIISWebsite: 'CreateOrUpdateWebsite'
-                  WebsiteName: 'MyTestAPI'
-                  WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
-                  WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
-                  CreateOrUpdateAppPoolForWebsite: true
-                  AppPoolNameForWebsite: 'DotNetCorePool'
-                  DotNetVersionForWebsite: 'v4.0'
-                  PipeLineModeForWebsite: 'Classic'
-                  AppPoolIdentityForWebsite: 'LocalSystem'
-
               - task: IISWebAppDeploymentOnMachineGroup@0
                 inputs:
                   WebSiteName: 'MyTestAPI'
