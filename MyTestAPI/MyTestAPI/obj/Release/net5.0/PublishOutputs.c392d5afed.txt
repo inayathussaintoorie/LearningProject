@@ -1,7 +1,0 @@
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\MyTestAPI.exe
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\appsettings.json
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\MyTestAPI.dll
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\MyTestAPI.deps.json
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\MyTestAPI.runtimeconfig.json
-D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI\obj\Release\net5.0\PubTmp\Out\MyTestAPI.pdb
