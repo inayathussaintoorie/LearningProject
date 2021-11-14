@@ -57,18 +57,20 @@ stages:
       - task: DeleteFiles@1
         displayName: Clear Artifacts staging directory
         inputs:
-          Contents: $(Build.ArtifactStagingDirectory)
+          Contents: $(Build.ArtifactStagingDirectory) $(Build.ArtifactStagingDirectory)
+          
+      - script: 
+         echo the ArtifactStagingDirectory is 
       - task: DotNetCoreCLI@2
         displayName: Publishing the API code
         inputs:
           command: 'publish'
-          publishWebProjects: true
+          publishWebProjects: false
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.zip'
           arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
           zipAfterPublish: true
           modifyOutputPath: true
-
           
       - task: PublishBuildArtifacts@1
         inputs:
