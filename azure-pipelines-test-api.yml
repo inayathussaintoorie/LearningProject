@@ -60,14 +60,14 @@ stages:
           publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.zip'
-          arguments: --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
+          arguments: --output $(Build.ArtifactStagingDirectory)
           zipAfterPublish: false
           modifyOutputPath: true
 
           
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'TestAPIArtifact'
 
 - stage: Deploy
