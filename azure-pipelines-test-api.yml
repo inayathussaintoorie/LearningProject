@@ -59,7 +59,7 @@ stages:
           publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: $(solution)
-          arguments: --o $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
+          arguments: --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
           zipAfterPublish: true
           modifyOutputPath: true
 
