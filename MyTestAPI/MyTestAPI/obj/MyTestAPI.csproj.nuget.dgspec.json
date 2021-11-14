@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\MyTestAPI.csproj": {}
+    "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\MyTestAPI.csproj": {}
   },
   "projects": {
-    "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\MyTestAPI.csproj": {
+    "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\MyTestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\MyTestAPI.csproj",
+        "projectUniqueName": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\MyTestAPI.csproj",
         "projectName": "MyTestAPI",
-        "projectPath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\MyTestAPI.csproj",
+        "projectPath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\MyTestAPI.csproj",
         "packagesPath": "C:\\Users\\Inayat\\.nuget\\packages\\",
-        "outputPath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\obj\\",
+        "outputPath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

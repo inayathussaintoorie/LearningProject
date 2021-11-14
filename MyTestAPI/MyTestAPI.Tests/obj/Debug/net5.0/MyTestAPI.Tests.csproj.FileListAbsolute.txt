@@ -106,3 +106,4 @@ D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI.Tests\obj\Debu
 D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI.Tests\obj\Debug\net5.0\ref\MyTestAPI.Tests.dll
 D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI.Tests\obj\Debug\net5.0\MyTestAPI.Tests.pdb
 D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI.Tests\obj\Debug\net5.0\MyTestAPI.Tests.genruntimeconfig.cache
+D:\Inayat\Learning\GithubRepo\LearningProject\MyTestAPI\MyTestAPI.Tests\obj\Debug\net5.0\MyTestAPI.Tests.csproj.AssemblyReference.cache

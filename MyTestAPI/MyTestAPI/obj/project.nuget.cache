@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fp3/DwqrTMJumblnLW9OkWwYFiM2ReE6UGW1UbnPQWihXJUzGXwaQmsLgoO/OmkJrbe2rtVTqx4DniVXKZK+jw==",
+  "dgSpecHash": "bE0v5KvtqlRRz0zDj5J7KQrELv58hCF+CF1l5eyI6dS7a8BHlk8XZZef7Pl5wYOW8LQS5HoqiENgLELE0fUqBA==",
   "success": true,
-  "projectFilePath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\WebApplication1\\MyTestAPI.csproj",
+  "projectFilePath": "D:\\Inayat\\Learning\\GithubRepo\\LearningProject\\MyTestAPI\\MyTestAPI\\MyTestAPI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
