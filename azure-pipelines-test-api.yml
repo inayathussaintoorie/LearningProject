@@ -54,14 +54,19 @@ stages:
           version: 5.0.x
           packageType: runtime
 
+      - task: DeleteFiles@1
+        displayName: Clear Artifacts staging directory
+        inputs:
+          Contents: $(Build.ArtifactStagingDirectory)
       - task: DotNetCoreCLI@2
+        displayName: Publishing the API code
         inputs:
           command: 'publish'
           publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: 'MyTestAPI/MyTestAPI/*.zip'
           arguments: --output $(Build.ArtifactStagingDirectory)
-          zipAfterPublish: false
+          zipAfterPublish: true
           modifyOutputPath: true
 
           
@@ -86,7 +91,12 @@ stages:
                   downloadType: 'single'
                   artifactName: 'TestAPIArtifact'
                   downloadPath: '$(System.ArtifactsDirectory)'
-
+                  
+              - task: PowerShell@2
+                inputs:
+                  script: 
+                   echo Path of System.ArtifactsDirectory is $(System.ArtifactsDirectory)
+                  
               - task: IISWebAppDeploymentOnMachineGroup@0
                 inputs:
                   WebSiteName: 'MyTestAPI'
