@@ -59,9 +59,10 @@ stages:
           publishWebProjects: true
           configuration: $(buildConfiguration)
           projects: $(solution)
-          arguments: -output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
+          arguments: --o $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
           zipAfterPublish: true
           modifyOutputPath: true
+
           
       - task: PublishBuildArtifacts@1
         inputs:
