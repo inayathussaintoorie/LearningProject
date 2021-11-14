@@ -58,7 +58,7 @@ stages:
           command: 'publish'
           publishWebProjects: true
           configuration: $(buildConfiguration)
-          projects: $(solution)
+          projects: 'MyTestAPI/MyTestAPI/*.zip'
           arguments: --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
           zipAfterPublish: true
           modifyOutputPath: true
