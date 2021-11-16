@@ -14,7 +14,7 @@ trigger:
     
 pool:
   vmImage: 'windows-NT'
-  name: 'Inayat Custom Agents Pool'
+  #name: 'Inayat Custom Agents Pool'
 
 variables:
   solution: MyTestAPI/**/*.csproj
